@@ -36,6 +36,14 @@ class DoorGad2Mine():
     air=Block("minecraft","air")
     rail=Block("minecraft","rail",{"shape":StringTag("east_west")})
     rail_2=Block("minecraft","rail")
+    bed_1=Block("minecraft","white_bed",{"part":StringTag("head"),"facing":StringTag("west")})
+    bed_2=Block("minecraft","white_bed",{"part":StringTag("foot"),"facing":StringTag("west")})
+    bed_3=Block("minecraft","white_bed",{"part":StringTag("foot"),"facing":StringTag("south")})
+    bed_4=Block("minecraft","white_bed",{"part":StringTag("head"),"facing":StringTag("south")})
+    shelf_1=Block("minecraft","oak_shelf",{"facing":StringTag("east")})
+    shelf_2=Block("minecraft","oak_shelf",{"facing":StringTag("west")})
+    shelf_3=Block("minecraft","oak_shelf",{"facing":StringTag("north")})
+    shelf_4=Block("minecraft","oak_shelf",{"facing":StringTag("south")})
 
 
     # constructor
@@ -60,10 +68,6 @@ class DoorGad2Mine():
         self.level.set_version_block(x,y,z,"minecraft:overworld",self.game_version,name_set)
 
 
-    # set Entity in the input level
-    def setEntity(self,x,z):
-
-        pass
 
     #set Doorgadget in the input level
     def setGadget(self):
@@ -177,9 +181,10 @@ class DoorGad2Mine():
                 self.setBlock(self.origin_x+3,self.origin_y+6,self.origin_z+i,self.glass)
                 self.setBlock(self.origin_x+3,self.origin_y+7,self.origin_z+i,self.glass)
 
-                # set chain
+                # set shelves
                 if i==18:
-                    self.setBlock(self.origin_x+4,self.origin_y+6,self.origin_z+i,self.chain)
+                    self.setBlock(self.origin_x+4,self.origin_y+7,self.origin_z+i,self.shelf_1)
+                    self.setBlock(self.origin_x+4,self.origin_y+7,self.origin_z+i-1,self.shelf_2)
 
                     self.setBlock(self.origin_x+4,self.origin_y+4,self.origin_z+i,self.glass)
                     self.setBlock(self.origin_x+3,self.origin_y+4,self.origin_z+i,self.glass)
@@ -213,14 +218,11 @@ class DoorGad2Mine():
                     self.setBlock(self.origin_x+3,self.origin_y+4,self.origin_z+i,self.glass)
                     self.setBlock(self.origin_x+2,self.origin_y+4,self.origin_z+i,self.glass)
 
-                    self.setBlock(self.origin_x+4,self.origin_y+7,self.origin_z+i,self.slab)
+                    self.setBlock(self.origin_x+4,self.origin_y+7,self.origin_z+i,self.bed_3)       
+                    self.setBlock(self.origin_x+4,self.origin_y+7,self.origin_z+i+1,self.bed_4)
                     self.setBlock(self.origin_x+4,self.origin_y+8,self.origin_z+i,self.glass)
-
-                elif i==21:
-
-                    self.setBlock(self.origin_x+4,self.origin_y+7,self.origin_z+i,self.rail)
-                    mine1=Entity("minecraft","minecart",self.origin_x+4.0,self.origin_y+8.0,self.origin_z+i+0.0,NamedTag(None,""))
-                    self.level.set_version_block(self.origin_x+4,self.origin_y+7,self.origin_z+i,"minecraft:overworld",self.game_version,mine1)                    
+                    self.setBlock(self.origin_x+4,self.origin_y+8,self.origin_z+i+1,self.glass)
+                    
 
                 # normal
                 self.setBlock(self.origin_x+5,self.origin_y+7,self.origin_z+i,self.glass)
@@ -234,45 +236,29 @@ class DoorGad2Mine():
 
             # set valve
             if i==13 or i==17:
-                self.setBlock(self.origin_x+11,self.origin_y+8,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+11,self.origin_y+9,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+8,self.origin_y+8,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+8,self.origin_y+9,self.origin_z+i,self.glass)
 
             elif i>=14 and i<=16:
 
                 if i==15:
-                    self.setBlock(self.origin_x+11,self.origin_y+6,self.origin_z+i,self.stone)
-                    self.setBlock(self.origin_x+11,self.origin_y+7,self.origin_z+i,self.stone)
+                    self.setBlock(self.origin_x+8,self.origin_y+6,self.origin_z+i,self.stone)
+                    self.setBlock(self.origin_x+8,self.origin_y+7,self.origin_z+i,self.stone)
 
-                    self.setBlock(self.origin_x+11,self.origin_y+6,self.origin_z+i-1,self.ladder)
-                    self.setBlock(self.origin_x+11,self.origin_y+7,self.origin_z+i-1,self.ladder)
+                    self.setBlock(self.origin_x+8,self.origin_y+6,self.origin_z+i-1,self.ladder)
+                    self.setBlock(self.origin_x+8,self.origin_y+7,self.origin_z+i-1,self.ladder)
 
-                self.setBlock(self.origin_x+10,self.origin_y+8,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+10,self.origin_y+9,self.origin_z+i,self.glass)
+                
+                self.setBlock(self.origin_x+7,self.origin_y+8,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+7,self.origin_y+9,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+8,self.origin_y+10,self.origin_z+i,self.glass)
 
-                self.setBlock(self.origin_x+11,self.origin_y+10,self.origin_z+i,self.glass)
-
-                self.setBlock(self.origin_x+12,self.origin_y+8,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+12,self.origin_y+9,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+9,self.origin_y+8,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+9,self.origin_y+9,self.origin_z+i,self.glass)
 
             # add nothing path
             if i==10:
 
-                self.setBlock(self.origin_x+12,self.origin_y+6,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+12,self.origin_y+7,self.origin_z+i,self.glass)
-
-                self.setBlock(self.origin_x+11,self.origin_y+5,self.origin_z+i,self.stone)
-                self.setBlock(self.origin_x+10,self.origin_y+5,self.origin_z+i,self.stone)
-
-                self.setBlock(self.origin_x+9,self.origin_y+6,self.origin_z+i+1,self.glass)
-                self.setBlock(self.origin_x+9,self.origin_y+7,self.origin_z+i+1,self.glass)
-                self.setBlock(self.origin_x+9,self.origin_y+6,self.origin_z+i-1,self.glass)
-                self.setBlock(self.origin_x+9,self.origin_y+7,self.origin_z+i-1,self.glass)
-                self.setBlock(self.origin_x+9,self.origin_y+5,self.origin_z+i,self.stone)
-
-                self.setBlock(self.origin_x+8,self.origin_y+6,self.origin_z+i+1,self.glass)
-                self.setBlock(self.origin_x+8,self.origin_y+7,self.origin_z+i+1,self.glass)
-                self.setBlock(self.origin_x+8,self.origin_y+6,self.origin_z+i-1,self.glass)
-                self.setBlock(self.origin_x+8,self.origin_y+7,self.origin_z+i-1,self.glass)
                 self.setBlock(self.origin_x+8,self.origin_y+5,self.origin_z+i,self.stone)
 
                 self.setBlock(self.origin_x+8,self.origin_y+6,self.origin_z+i,self.ladder_2)
@@ -320,11 +306,11 @@ class DoorGad2Mine():
 
             if i==19:
 
-                self.setBlock(self.origin_x+12,self.origin_y+6,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+12,self.origin_y+7,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+11,self.origin_y+6,self.origin_z+i+1,self.glass)
-                self.setBlock(self.origin_x+11,self.origin_y+7,self.origin_z+i+1,self.glass)
-                self.setBlock(self.origin_x+11,self.origin_y+5,self.origin_z+i,self.stone)
+                self.setBlock(self.origin_x+9,self.origin_y+6,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+9,self.origin_y+7,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+8,self.origin_y+6,self.origin_z+i+1,self.glass)
+                self.setBlock(self.origin_x+8,self.origin_y+7,self.origin_z+i+1,self.glass)
+                self.setBlock(self.origin_x+8,self.origin_y+5,self.origin_z+i,self.stone)
                 
                 for j in range(6):
 
@@ -336,8 +322,10 @@ class DoorGad2Mine():
                         self.setBlock(self.origin_x+10-j,self.origin_y+9,self.origin_z+i+1,self.stone)
                         self.setBlock(self.origin_x+10-j,self.origin_y+9,self.origin_z+i+2,self.stone)
                         self.setBlock(self.origin_x+10-j,self.origin_y+8,self.origin_z+i,self.ice)
-                        self.setBlock(self.origin_x+10-j,self.origin_y+6,self.origin_z+i,self.chain)
-                        self.setBlock(self.origin_x+10-j,self.origin_y+7,self.origin_z+i,self.air)
+                        self.setBlock(self.origin_x+10-j,self.origin_y+6,self.origin_z+i,self.air)
+                        self.setBlock(self.origin_x+10-j,self.origin_y+7,self.origin_z+i,self.shelf_3)
+                        self.setBlock(self.origin_x+11-j,self.origin_y+7,self.origin_z+i,self.shelf_4)
+                        self.setBlock(self.origin_x+12-j,self.origin_y+7,self.origin_z+i,self.shelf_4)
 
                         for k in range(3):
 
@@ -361,7 +349,7 @@ class DoorGad2Mine():
                                 self.setBlock(self.origin_x+11-j+k,self.origin_y+9,self.origin_z+i+1,self.stone)
                                 self.setBlock(self.origin_x+11-j+k,self.origin_y+10,self.origin_z+i+1,self.sand)
                                 self.setBlock(self.origin_x+11-j+k,self.origin_y+11,self.origin_z+i+1,self.cactus)
-                                self.setBlock(self.origin_x+12-j+k,self.origin_y+12,self.origin_z+i+1,self.chain)
+                                self.setBlock(self.origin_x+12-j+k,self.origin_y+12,self.origin_z+i+1,self.shelf_2)
 
                             else:
 
@@ -389,28 +377,27 @@ class DoorGad2Mine():
                             self.setBlock(self.origin_x+11-j+3,self.origin_y+10,self.origin_z+i+k,self.glass)
                             self.setBlock(self.origin_x+11-j+3,self.origin_y+11,self.origin_z+i+k,self.glass)
                             self.setBlock(self.origin_x+11-j+3,self.origin_y+12,self.origin_z+i+k,self.glass)
+                        
 
-                    self.setBlock(self.origin_x+10-j,self.origin_y+6,self.origin_z+i+1,self.glass)
-                    self.setBlock(self.origin_x+10-j,self.origin_y+7,self.origin_z+i+1,self.glass)
-                    self.setBlock(self.origin_x+10-j,self.origin_y+6,self.origin_z+i-1,self.glass)
-                    self.setBlock(self.origin_x+10-j,self.origin_y+7,self.origin_z+i-1,self.glass)
+                for j in range(3):
+                    self.setBlock(self.origin_x+7-j,self.origin_y+6,self.origin_z+i+1,self.glass)
+                    self.setBlock(self.origin_x+7-j,self.origin_y+7,self.origin_z+i+1,self.glass)
+                    self.setBlock(self.origin_x+7-j,self.origin_y+6,self.origin_z+i-1,self.glass)
+                    self.setBlock(self.origin_x+7-j,self.origin_y+7,self.origin_z+i-1,self.glass)
+                    self.setBlock(self.origin_x+7-j,self.origin_y+5,self.origin_z+i,self.stone)
 
-                    self.setBlock(self.origin_x+10-j,self.origin_y+5,self.origin_z+i,self.stone)
 
                 for j in range(5):
 
                     if j==0:
-                        self.setBlock(self.origin_x+3-j,self.origin_y+8,self.origin_z+i,self.slab)
                         self.setBlock(self.origin_x+3-j,self.origin_y+8,self.origin_z+i-1,self.glass)
                         self.setBlock(self.origin_x+3-j,self.origin_y+9,self.origin_z+i,self.glass)
 
-                    elif j==1:
-                        self.setBlock(self.origin_x+3-j,self.origin_y+8,self.origin_z+i,self.rail_2)
-                        Entity("minecraft","minecart",self.origin_x+3.0-j,self.origin_y+8.0,self.origin_z+i+0.0,NamedTag(None,""))
-
+                        self.setBlock(self.origin_x+2-j,self.origin_y+8,self.origin_z+i,self.bed_1)
+                        self.setBlock(self.origin_x+3-j,self.origin_y+8,self.origin_z+i,self.bed_2)
 
                     
-                    else:
+                    elif j>=2:
                         self.setBlock(self.origin_x+3-j,self.origin_y+8,self.origin_z+i-1,self.glass)
                         self.setBlock(self.origin_x+3-j,self.origin_y+9,self.origin_z+i-1,self.glass)
 
@@ -421,11 +408,11 @@ class DoorGad2Mine():
             # normal
             else:
 
-                self.setBlock(self.origin_x+12,self.origin_y+6,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+12,self.origin_y+7,self.origin_z+i,self.glass)
-                self.setBlock(self.origin_x+11,self.origin_y+5,self.origin_z+i,self.stone)
+                self.setBlock(self.origin_x+9,self.origin_y+6,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+9,self.origin_y+7,self.origin_z+i,self.glass)
+                self.setBlock(self.origin_x+8,self.origin_y+5,self.origin_z+i,self.stone)
 
                 if i!=10:
 
-                    self.setBlock(self.origin_x+10,self.origin_y+6,self.origin_z+i,self.glass)
-                    self.setBlock(self.origin_x+10,self.origin_y+7,self.origin_z+i,self.glass)
+                    self.setBlock(self.origin_x+7,self.origin_y+6,self.origin_z+i,self.glass)
+                    self.setBlock(self.origin_x+7,self.origin_y+7,self.origin_z+i,self.glass)
