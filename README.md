@@ -25,8 +25,8 @@ INFO - Finished saving changes to level ./output
 The output file contains the door gadget generated at the specified location.
 
 ## View
-<img width="2304" height="2004" alt="Image" src="https://github.com/user-attachments/assets/adb417a4-7db9-455c-91f4-dc51cf3b5b3b" />
+<img width="2015" height="2004" alt="Image" src="https://github.com/user-attachments/assets/7989f6e7-b0da-4caf-942f-0827ee747499" />
 
-<img width="2304" height="2004" alt="Image" src="https://github.com/user-attachments/assets/94bf06f5-1a62-48ac-aad5-460032e1e076" />
+<img width="2016" height="2004" alt="Image" src="https://github.com/user-attachments/assets/d5ce6742-c80d-42c8-8f7c-f8e953f28cc8" />
 
-![Image](https://github.com/user-attachments/assets/2bfa99a8-86b7-4fc8-8bf1-29bdbee04997)
+![Image](https://github.com/user-attachments/assets/08faa132-d0df-4309-b1dd-99c7b5368c6f)
