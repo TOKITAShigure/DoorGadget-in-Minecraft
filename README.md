@@ -29,4 +29,6 @@ The output file contains the door gadget generated at the specified location.
 
 <img width="2016" height="2004" alt="Image" src="https://github.com/user-attachments/assets/d5ce6742-c80d-42c8-8f7c-f8e953f28cc8" />
 
-![Image](https://github.com/user-attachments/assets/08faa132-d0df-4309-b1dd-99c7b5368c6f)
+<img width="720" height="405" alt="Image" src="https://github.com/user-attachments/assets/1c128ddb-e79d-4525-9976-4d6dc52564d9" />
+
+<img width="720" height="405" alt="Image" src="https://github.com/user-attachments/assets/0992cf8a-874e-4afb-b451-2806c2c69a9e" />
